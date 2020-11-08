@@ -1,7 +1,7 @@
 //Drop down selection function 
 function InIt() {
     var DropDownSelection = d3.select("#selDataset");
-    d3.json("samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
         data.names.forEach((name) => {
             DropDownSelection.append("option").text(name);
         });
@@ -20,7 +20,7 @@ function optionChanged(id) {
 
 //Function for the demographic table 
 function demographics(id) {
-    d3.json("samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
         var demoInfo = d3.select("#sample-metadata")
         var filtered = data.metadata.filter(object => object.id.toString() == id)[0];
         demoInfo.html("")
@@ -32,7 +32,7 @@ function demographics(id) {
 
 //Function for the plots and charts as well as the filtering whenever needed (dropdown changed)
 function buildPlots(id) {
-    d3.json("samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
         var samples = data.samples;
         var samplesArray = samples.filter(object => object.id == id)[0];
         var metadata = data.metadata;
