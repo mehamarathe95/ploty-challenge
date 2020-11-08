@@ -105,7 +105,7 @@ function buildPlots(id) {
             mode: "gauge",
             gauge: {
                 axis: {range: [0,9]},
-                bar: {color: "040404", thickness: 0.325},
+                bar: {color: "040404", thickness: 0.225},
                 steps: [
                     {range: [0,1], color: "#FFA500"},
                     {range: [1,2], color: "#FF8C00"},
